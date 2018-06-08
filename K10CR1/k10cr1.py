@@ -25,7 +25,7 @@ class K10CR1:
             print(port)
             # condition from from Xiayuo's old code, not sure if length check is necessary
             # VID:PID=0403:faf0
-            if (len(port[2]) == 34) & (port[2][26:] == self.ser_num):
+            if (len(port[2]) == 34) & (port[2][26:].startswith(self.ser_num)):
                 self.ser = serial.Serial(baudrate=115200, timeout=0.1, port=port[0])
                 self.ready = True
                 break
