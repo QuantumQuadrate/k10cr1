@@ -167,7 +167,15 @@ class K10CR1:
         # print(hcmd)
         self.write(hcmd)
         # return rd(20)
-
+        
+    def zerobacklash(self):
+        backlashpos=self.dth(angle_to_DU(0),4)
+        chan='0100'
+        header='3A040600d001'
+        hcmd=header+chan+backlashpos
+        self.write(hcmd)
+        #return rd(20)
+            
     def jog(self):
         self.write('6a0401015001')
         return self.rd(20)
