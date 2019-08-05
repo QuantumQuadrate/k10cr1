@@ -15,6 +15,7 @@ class K10CR1:
             print('Unable to connect to device with serial number: {}'.format(ser_num))
         else:
             print('Connect successful to device with serial number: {}'.format(ser_num))
+            self.zerobacklash()
 
     def connect(self):
         """Searches all com ports for device with matching serial number
