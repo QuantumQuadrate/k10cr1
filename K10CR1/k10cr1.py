@@ -170,7 +170,7 @@ class K10CR1:
         # return rd(20)
         
     def zerobacklash(self):
-        backlashpos=self.dth(angle_to_DU(0),4)
+        backlashpos=self.dth(self.angle_to_DU(0),4)
         chan='0100'
         header='3A040600d001'
         hcmd=header+chan+backlashpos
